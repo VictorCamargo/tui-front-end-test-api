@@ -8,7 +8,9 @@ module.exports.countryService = {
   getCountryByName(req, res) {
     const { slug } = req.params;
 
-    const country = countries.find((country) => country.id === slug);
+    const country = countries.find(
+      (country) => country.id.toLowerCase() === slug.toLowerCase()
+    );
 
     res.send(country);
   },

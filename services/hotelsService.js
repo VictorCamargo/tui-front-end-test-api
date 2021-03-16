@@ -6,16 +6,26 @@ module.exports.hotelsService = {
     const { pagination } = req;
     const { country } = req.query;
 
+    const { sortBy } = req.query;
+
     let filteredHotels = hotels;
 
     if (!_.isEmpty(country)) {
-      filteredHotels = hotels.filter(
-        (hotel) => hotel.country.toLowerCase() === country
+      filteredHotels = filteredHotels.filter(
+        (hotel) => hotel.country.toLowerCase() === country.toLowerCase()
       );
     }
 
+    if (!_.isEmpty(sortBy)) {
+      if (sortBy === 'lower') {
+        filteredHotels = _.orderBy(filteredHotels, ['price'], ['asc']);
+      } else if (sortBy === 'high') {
+        filteredHotels = _.orderBy(filteredHotels, ['price'], ['desc']);
+      }
+    }
+
     filteredHotels = filteredHotels.map((object) => {
-      object.thumbnail = `https://source.unsplash.com/featured/1920x400/?${country},travel`;
+      object.thumbnail = `https://source.unsplash.com/featured/500x333/?hotels&sig=${object.id}&orientation=landscape&order_by=popular`;
 
       return object;
     });
