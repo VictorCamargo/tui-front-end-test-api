@@ -2,25 +2,25 @@ module.exports = [
   {
     id: 'brazil',
     country: 'Brazil',
-    thumbnail: 'http://localhost:3001/images/brazil-thumbnail.jpg',
-    image: 'http://localhost:3001/images/brazil.jpg',
+    thumbnail: `${process.env.BASE_URL}/images/brazil-thumbnail.jpg`,
+    image: `${process.env.BASE_URL}/images/brazil.jpg`,
   },
   {
     id: 'portugal',
     country: 'Portugal',
-    thumbnail: 'http://localhost:3001/images/portugal-thumbnail.jpg',
-    image: 'http://localhost:3001/images/portugal.jpg',
+    thumbnail: `${process.env.BASE_URL}/images/portugal-thumbnail.jpg`,
+    image: `${process.env.BASE_URL}/images/portugal.jpg`,
   },
   {
     id: 'spain',
     country: 'Spain',
-    thumbnail: 'http://localhost:3001/images/spain-thumbnail.jpg',
-    image: 'http://localhost:3001/images/spain.jpg',
+    thumbnail: `${process.env.BASE_URL}/images/spain-thumbnail.jpg`,
+    image: `${process.env.BASE_URL}/images/spain.jpg`,
   },
   {
     id: 'italy',
     country: 'Italy',
-    thumbnail: 'http://localhost:3001/images/italy-thumbnail.jpg',
-    image: 'http://localhost:3001/images/italy.jpg',
+    thumbnail: `${process.env.BASE_URL}/images/italy-thumbnail.jpg`,
+    image: `${process.env.BASE_URL}/images/italy.jpg`,
   },
 ];
